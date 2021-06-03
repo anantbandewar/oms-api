@@ -30,6 +30,12 @@ public class Orders {
     @Column(name = "Status", nullable = false)
     private String status;
 
+    @Column(name = "DueDate", nullable = false)
+    private Timestamp dueDate;
+
+    @Column(name = "Total", nullable = false)
+    private Double total;
+
     @Column(name = "UserCreated", nullable = false)
     private Long userCreated;
 

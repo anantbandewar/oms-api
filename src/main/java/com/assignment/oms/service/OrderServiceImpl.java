@@ -83,6 +83,8 @@ public class OrderServiceImpl implements OrderService {
             Orders orders = orderRepository.save(Orders.builder()
                     .status(OrderStatus.PLACED.toString())
                     .addressId(request.getAddressId())
+                    .dueDate(request.getDueDate())
+                    .total(request.getTotal()) // can be calculated here from order items (product's price)
                     .userId(coreAttributes.getUserId())
                     .userCreated(coreAttributes.getUserId())
                     .dateCreated(Timestamp.from(Instant.now()))
@@ -157,6 +159,8 @@ public class OrderServiceImpl implements OrderService {
         return OrderDetails.builder()
                 .user(userDetails)
                 .orderItems(orderItems)
+                .dueDate(orders.getDueDate())
+                .total(orders.getTotal())
                 .build();
     }
 

@@ -4,6 +4,8 @@ CREATE TABLE [dbo].[Orders]
 	[UserId]    	BIGINT NOT NULL,
 	[AddressId] 	BIGINT NOT NULL,
 	[Status]    	VARCHAR(25) NOT NULL,
+	[DueDate]       DATETIME NOT NULL,
+	[Total]         DECIMAL(18, 2) NOT NULL,
 	[UserCreated]   BIGINT NOT NULL,
 	[DateCreated]   DATETIME NOT NULL,
 	[UserModified]  BIGINT,

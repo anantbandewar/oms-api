@@ -3,6 +3,7 @@ package com.assignment.oms.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -17,4 +18,10 @@ public class CreateOrderRequest {
 
     @JsonProperty("addressId")
     private Long addressId;
+
+    @JsonProperty("dueDate")
+    private Timestamp dueDate;
+
+    @JsonProperty("total")
+    private Double total;
 }

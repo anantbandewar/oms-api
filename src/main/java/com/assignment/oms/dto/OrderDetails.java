@@ -4,6 +4,7 @@ import com.assignment.oms.constants.OrderStatus;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 @Data
@@ -24,6 +25,12 @@ public class OrderDetails {
 
     @JsonProperty("shippingAddress")
     private ShippingAddressDetails shippingAddress;
+
+    @JsonProperty("dueDate")
+    private Timestamp dueDate;
+
+    @JsonProperty("total")
+    private Double total;
 
     @JsonProperty("status")
     private OrderStatus orderStatus;
