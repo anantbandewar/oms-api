@@ -1,0 +1,5 @@
+One_or_more_parameters_required_is_missing_in_the_header_error_code: 1001
+One_or_more_parameters_required_is_missing_in_the_header_error_message:  is required in the request header
+
+One_or_more_parameters_is_invalid_in_the_header_error_code: 1002
+One_or_more_parameters_is_invalid_in_the_header_error_message: Invalid {0} value provided in the request header

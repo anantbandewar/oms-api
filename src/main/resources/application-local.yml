@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost;databaseName=OrderManagementSystem;integratedSecurity=true;
+    #username: sa
+    #password:
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        ddl-auto: validate
+
+email:
+  from: support@oms.com
+  retry:
+    count: 3
+    delay: 2000

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template For Email Notification.</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p>
+            <div th:utext="${message}"></div>
+        </p>
+        <p>
+            Regards, <br /> <em>Order Management Team</em>
+        </p>
+    </body>
+</html>
