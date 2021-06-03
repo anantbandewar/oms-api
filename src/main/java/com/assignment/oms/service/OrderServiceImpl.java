@@ -90,6 +90,7 @@ public class OrderServiceImpl implements OrderService {
 
             orderItemService.saveOrderItems(request.getOrderItems(), orders.getOrderId());
             UserDetails userDetails = userService.getUserDetails(coreAttributes.getUserId());
+            // TODO: Update Stock
             sendEmailNotification(userDetails, orders.getOrderId());
 
             response = OrderResponse.builder()
@@ -116,6 +117,10 @@ public class OrderServiceImpl implements OrderService {
                 orders.get().setDateModified(Timestamp.from(Instant.now()));
 
                 orderRepository.save(orders.get());
+
+                //if (OrderStatus.CANCELLED.toString().equalsIgnoreCase(request.getStatus()))
+                    // TODO: Update Stock
+
                 response = OrderResponse.builder().orderId(orderId).orderStatus(orders.get().getStatus()).build();
             }
         } catch (Exception e) {
@@ -136,6 +141,7 @@ public class OrderServiceImpl implements OrderService {
                 orders.get().setDateModified(Timestamp.from(Instant.now()));
 
                 orderRepository.save(orders.get());
+                // TODO: Update Stock
                 response = OrderResponse.builder().orderId(orderId).orderStatus(orders.get().getStatus()).build();
             }
         } catch (Exception e) {
